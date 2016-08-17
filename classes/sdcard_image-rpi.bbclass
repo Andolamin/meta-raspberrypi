@@ -74,6 +74,7 @@ FATPAYLOAD ?= ""
 IMAGEDATESTAMP = "${@time.strftime('%Y.%m.%d',time.gmtime())}"
 IMAGE_CMD_rpi-sdimg[vardepsexclude] += "IMAGEDATESTAMP"
 IMAGE_CMD_rpi-sdimg[vardepsexclude] += "DATETIME"
+do_image_rpi_sdimg[vardepsexclude] += "DATETIME IMAGEDATESTAMP"
 
 RPI_KERNEL_VERSION := "${@get_kernelversion_file('${STAGING_KERNEL_BUILDDIR}')}"
 
